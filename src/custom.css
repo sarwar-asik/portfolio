@@ -1,0 +1,25 @@
+.back{
+    background-color: #8D72E1;
+}
+.fonts{
+    color:#7978FF
+}
+.fonts:hover{
+    color:#300aa2
+}
+
+.buttons{
+    background-color:#8565e6 ;
+    padding: 15px 10px ;
+    border-radius: 20px;
+    color: white;
+   font-weight: 400;
+    
+
+}
+
+.buttons:hover{
+    background-color:#5a2fda ;
+    
+    
+}

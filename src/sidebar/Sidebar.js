@@ -4,20 +4,19 @@ import React, { useState } from "react";
 
 import styled from "styled-components";
 import { Link, NavLink } from "react-router-dom";
-import home from '../../../assets/homeColor.png'
-import signup from '../../../assets/signUp.png'
-import login from '../../../assets/loginColor.png'
-import about from '../../../assets/profile.png'
-import team from '../../../assets/team.png'
-import projects from '../../../assets/project.png'
-import profileImg from '../../../assets/small-size.png'
-import logOut  from '../../../assets/logout.png'
-
+import home from "../assets/homeColor.png";
+import signup from "../assets/signUp.png";
+import login from "../assets/loginColor.png";
+import about from "../assets/profile.png";
+import team from "../assets/team.png";
+import projects from "../assets/project.png";
+import profileImg from "../assets/small-size.png";
+import logOut from "../assets/logout.png";
 
 const Container = styled.div`
-  position: fixed;
+  // position: fixed;
   .active {
-    border-right: 4px solid white;
+    // border-right: 4px solid white;
     h5 {
       filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg)
         brightness(103%) contrast(103%);
@@ -40,7 +39,7 @@ const Button = styled.button`
   &::before,
   &::after {
     content: "";
-    background-color:white;
+    background-color: white;
     height: 2px;
     width: 1rem;
     position: absolute;
@@ -57,7 +56,7 @@ const Button = styled.button`
 `;
 
 const SidebarContainer = styled.div`
-  background-color: black;
+  background-color: blac;
   width: 3.5rem;
   height: 80vh;
   margin-top: 1rem;
@@ -79,12 +78,12 @@ const Logo = styled.div`
 `;
 
 const SlickBar = styled.ul`
-  color: white;
+  color: whit;
   list-style: none;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: black;
+  background-color: blac;
   padding: 2rem 0;
   position: absolute;
   top: 6rem;
@@ -96,7 +95,7 @@ const SlickBar = styled.ul`
 
 const Item = styled(NavLink)`
   text-decoration: none;
-  color: white;
+  color: whit;
   width: 100%;
   padding: 1rem 0;
   cursor: pointer;
@@ -179,7 +178,7 @@ const Logout = styled.button`
   width: 2rem;
   height: 3rem;
   background-color: transparent;
-  color:red;
+  color: red;
   img {
     width: 100%;
     height: auto;
@@ -196,84 +195,82 @@ const Logout = styled.button`
 
 const Sidebar = () => {
   const [click, setClick] = useState(false);
+
   const handleClick = () => setClick(!click);
 
   const [profileClick, setprofileClick] = useState(false);
   const handleProfileClick = () => setprofileClick(!profileClick);
 
+  const [theme, setTheme] = useState();
+
   return (
-    <Container>
-    <Button clicked={click} onClick={() => handleClick()}>
-      Click
-    </Button>
-    <SidebarContainer>
-      <Logo>
-        <img src="https://react-sidebar.vercel.app/static/media/home-solid.831db11d.svg" alt="" />
-      </Logo>
-      <SlickBar clicked={click}>
-        {/* 1 */}
-      <Item
-          onClick={() => setClick(false)}
-          activeClassName="active"
-          to="/"
-        >
-         <img src={home} alt="" />
-          <Text clicked={click}>Home</Text>
-        </Item>
-        {/*  */}
-        <Item
-          onClick={() => setClick(false)}
-          activeClassName="active"
-          to="/signup"
-        >
-        <img src={signup} alt="" />
-          <Text clicked={click}>Sign Up</Text>
-        </Item>
-        <Item
-          onClick={() => setClick(false)}
-          activeClassName="active"
-          to="/login"
-        >
-        <img src={login} alt="" />
-          <Text clicked={click}>Log In</Text>
-        </Item> 
+    <Container className="bg-black">
+      <Button clicked={click} onClick={() => handleClick()}>
+        Click
+      </Button>
+      <SidebarContainer className="bg-blac">
+        <Logo>
+          <img
+            src="https://react-sidebar.vercel.app/static/media/home-solid.831db11d.svg"
+            alt=""
+          />
+        </Logo>
+
+        <SlickBar clicked={click} className="bg-black text-white">
+          {/* 1 */}
+          <Item onClick={() => setClick(false)} activeClassName="active" to="/">
+            <img
+              src="https://react-sidebar.vercel.app/static/media/home-solid.831db11d.svg"
+              alt=""
+            />
+            <Text clicked={click}>Home</Text>
+          </Item>
+          {/*  */}
           <Item
-          onClick={() => setClick(false)}
-          activeClassName="active"
-          to="/"
-        >
-        <img src={projects} alt="" />
-          <Text clicked={click}>Project</Text>
-        </Item>  
-         <Item
-          onClick={() => setClick(false)}
-          activeClassName="active"
-          to="/"
-        >
-        <img src={about} alt="" />
-          <Text clicked={click}>About</Text>
-        </Item>
-      </SlickBar>
+            onClick={() => setClick(false)}
+            activeClassName="active"
+            to="/signup"
+          >
+            <img src={signup} alt="" />
+            <Text clicked={click}>Sign Up</Text>
+          </Item>
+          <Item
+            onClick={() => setClick(false)}
+            activeClassName="active"
+            to="/login"
+          >
+            <img src={login} alt="" />
 
-      <Profile clicked={profileClick}>
-        <img
-          onClick={() => handleProfileClick()}
-          src={profileImg}
-          alt="Profile"
-        />
-        <Details clicked={profileClick}>
-          <Name>
-            <h4>Sarwar Hossain</h4>
-        
-          </Name>
+            <Text clicked={click}>Log In</Text>
+          </Item>
+          <Item onClick={() => setClick(false)} activeClassName="active" to="/">
+            <img src={projects} alt="" />
+            <Text clicked={click}>Project</Text>
+          </Item>
+          <Item onClick={() => setClick(false)} activeClassName="active" to="/">
+            <img src={about} alt="" />
+            <Text clicked={click}>About</Text>
+          </Item>
+        </SlickBar>
 
-          <Logout>
-            <img src={logOut} alt="" />
-          </Logout>
-        </Details>
-      </Profile>
-    </SidebarContainer>
-  </Container>
+        <Profile clicked={profileClick}>
+          <img
+            onClick={() => handleProfileClick()}
+            src={profileImg}
+            alt="Profile"
+          />
+          <Details clicked={profileClick}>
+            <Name>
+              <h4>Sarwar Hossain</h4>
+            </Name>
+
+            <Logout>
+              <img src={logOut} alt="" />
+            </Logout>
+          </Details>
+        </Profile>
+      </SidebarContainer>
+    </Container>
   );
 };
 
