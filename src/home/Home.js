@@ -1,15 +1,15 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
-import Project from "../pages/admin/AddProject";
-import Footer from "../pages/footer/Footer";
-import Navbar from "../pages/header/Navbar";
-import Login from "../pages/login/Login";
+import React, { useContext } from "react";
+
 import profile from "../assets/professional-removebg-preview.png";
 import { Cursor, Typewriter, useTypewriter } from "react-simple-typewriter";
 import "../../src/custom.css";
 import Services from "../services/Services";
+import MyProjects from "../myProjects/MyProjects";
+import { AuthContext } from "../firebase/AuthProvider";
+import SendMail from "../senMail/SendMail";
 
 const Home = () => {
+  const { theme } = useContext(AuthContext);
   const [text] = useTypewriter({
     words: [
       "Web Developer",
@@ -25,7 +25,7 @@ const Home = () => {
   
 
   return (
-    <div className="bg-blac sm:ml-[30% lg:ml-[10%">
+    <div className={` ${theme&&'bg-black'}`}>
       <div className="hero  ">
         <div className="hero-content flex-col lg:flex-row-reverse gap-[50px]">
           <figure className="sm:hidden hidden lg:flex md:flex">
@@ -50,7 +50,10 @@ const Home = () => {
         </div>
       </div>
       <Services />
-      {/* <Project /> */}
+
+  
+      <MyProjects/>
+      <SendMail/>
     </div>
   );
 };

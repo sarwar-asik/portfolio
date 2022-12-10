@@ -14,7 +14,8 @@ import profileImg from "../assets/small-size.png";
 import logOut from "../assets/logout.png";
 
 const Container = styled.div`
-  // position: fixed;
+  position: fixed;
+  z-index:50;
   .active {
     // border-right: 4px solid white;
     h5 {
@@ -209,12 +210,12 @@ const Sidebar = () => {
         Click
       </Button>
       <SidebarContainer className="bg-blac">
-        <Logo>
+        {/* <Logo>
           <img
             src="https://react-sidebar.vercel.app/static/media/home-solid.831db11d.svg"
             alt=""
           />
-        </Logo>
+        </Logo> */}
 
         <SlickBar clicked={click} className="bg-black text-white">
           {/* 1 */}

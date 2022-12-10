@@ -13,7 +13,8 @@ const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
-  const[theme,setTheme] = useState()
+
+  const[theme,setTheme] = useState(true)
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -47,7 +48,7 @@ const AuthProvider = ({ children }) => {
     }
   };
 
-  const authInfo = {name: ' zinku ' , user, createUser, login, logout };
+  const authInfo = {name: ' zinku ' , user, createUser, login, logout,theme,setTheme };
 
   return (
     <div>
