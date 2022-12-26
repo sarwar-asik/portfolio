@@ -1,84 +1,72 @@
 import React from "react";
-import '../custom.css'
+import { useTypewriter } from "react-simple-typewriter";
+import { toast } from "react-toastify";
+import "../custom.css";
 
 const SendMail = () => {
+  const [text1] = useTypewriter({
+    words: ["  Send Your Message to Contact me "],
+    loop: 100,
+    delaySpeed: 3000,
+    onLoopDone: () => console.log(`loop completed after 3 runs.`),
+  });
+
+  const storeRevierw = (event) => {
+    toast("Thanks for Review ");
+    event.preventDefault();
+    const form = event.target;
+
+    form.reset();
+  };
   return (
     <div className=" border  my-5">
-      <form
-        action="https://public.herotofu.com/v1/d2c5b860-78aa-11ed-a126-b172cf164538"
-        method="post"
-      >
-        <div>
-          <label for="name">Your Name</label>
-          <input name="Name" id="name" type="text" required />
-        </div>
-        <div>
-          <label for="email">Your Email</label>
-          <input name="Email" id="email" type="email" required />
-        </div>
-        <div>
-          <input className="btn btn-error" type="submit" value="Send " />
-        </div>
-      </form>
-
-      <div className="hero min-h-screen max ">
+      <div className="hero  ">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="text-center lg:text-left">
-            <h1 className="text-3xl font-bold fonts"> Please , Send Your Review . </h1>
-            <p className="py-6 fonts">
-             You can send your opinion about me ..
-            </p>
-          </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl fonts">
-            {/* <form
+            <form
+              onSubmit={storeRevierw}
               action="https://public.herotofu.com/v1/d2c5b860-78aa-11ed-a126-b172cf164538"
               method="post"
               className="card-body"
             >
-              <div className="">
-                <label className="label">
-                  <span className="">Message</span>
-                </label>
-                <textarea
-                  type="text"
-                  placeholder="Write your message"
-                  className="input input-bordered w-full"
-                />
-              </div>
-              <div className="">
-                <label className="label">
-                  <span className="">Your Email</span>
+              <div>
+                <label for="name" className="label">
+                  Your Review
                 </label>
                 <input
+                  name="Name"
+                  id="name"
                   type="text"
-                  placeholder="Type Email"
+                  placeholder="Type Review "
                   className="input input-bordered w-full"
                   required
                 />
               </div>
-              <div className="form-control mt-6">
-                <input className="btn btn-error" type="submit" value="Send " />
+              <div>
+                <label for="email">Your Email</label>
+                <input
+                  name="Email"
+                  id="email"
+                  type="email"
+                  placeholder=" ex:abc@gmail.com"
+                  className="input input-bordered w-full"
+                  required
+                />
               </div>
-            </form> */}
-              <form
-        action="https://public.herotofu.com/v1/d2c5b860-78aa-11ed-a126-b172cf164538"
-        method="post"
-        className="card-body"
-      >
-        <div>
-          <label for="name" className="label">Your Name</label>
-          <input name="Name" id="name" type="text"
-           className="input input-bordered w-full"
-            required />
-        </div>
-        <div>
-          <label for="email">Your Email</label>
-          <input name="Email" id="email" type="email" className="input input-bordered w-full" required />
-        </div>
-        <div>
-          <input className="btn fonts btn-ghost" type="submit" value="Send " />
-        </div>
-      </form>
+              <div>
+                <input
+                  className="buttons px-3  py-5"
+                  type="submit"
+                  value="Send "
+                />
+              </div>
+            </form>
+          </div>
+          <div className="text-center lg:text-left">
+            <h1 className="text-3xl font-bold fonts h-[70px] w-[300px]">
+              {text1}
+            </h1>
+            <p className="py-6 fonts">You can send your message to me </p>
           </div>
         </div>
       </div>

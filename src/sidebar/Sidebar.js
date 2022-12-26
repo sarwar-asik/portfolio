@@ -1,21 +1,13 @@
-import React, { useState } from "react";
-
-//All the svg files
-
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import { Link, NavLink } from "react-router-dom";
-import home from "../assets/homeColor.png";
-import signup from "../assets/signUp.png";
-import login from "../assets/loginColor.png";
-import about from "../assets/profile.png";
-import team from "../assets/team.png";
-import projects from "../assets/project.png";
 import profileImg from "../assets/small-size.png";
 import logOut from "../assets/logout.png";
+import { AuthContext } from "../firebase/AuthProvider";
 
 const Container = styled.div`
   position: fixed;
-  z-index:50;
+  z-index: 50;
   .active {
     // border-right: 4px solid white;
     h5 {
@@ -26,7 +18,7 @@ const Container = styled.div`
 `;
 
 const Button = styled.button`
-  background-color: black;
+  // background-color: #2193b0;
   border: none;
   width: 2.5rem;
   height: 2.5rem;
@@ -112,7 +104,7 @@ const Item = styled(NavLink)`
   img {
     width: 1.2rem;
     height: auto;
-    filter: invert(92%) sepia(4%) saturate(1033%) hue-rotate(169deg)
+    filter: invert(92%) sepia(4%) saturate(103%) hue-rotate(199deg)
       brightness(78%) contrast(85%);
   }
 `;
@@ -134,7 +126,7 @@ const Profile = styled.div`
   align-items: center;
   justify-content: center;
   margin-left: ${(props) => (props.clicked ? "9rem" : "0")};
-  background-color: black;
+  // background-color: black;
   color: white;
   transition: all 0.3s ease;
   img {
@@ -143,7 +135,7 @@ const Profile = styled.div`
     border-radius: 50%;
     cursor: pointer;
     &:hover {
-      border: 2px solid var(--grey);
+      border: 2px solid grey;
       padding: 2px;
     }
   }
@@ -194,7 +186,17 @@ const Logout = styled.button`
   }
 `;
 
+const  theme1 = "#064f60"
+const theme2 = "black"
+
 const Sidebar = () => {
+  const { theme, setTheme } = useContext(AuthContext);
+
+  const handleTheme = () => {
+    setTheme(!theme);
+    localStorage.setItem("theme",theme)
+    console.log(theme);
+  };
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
@@ -202,74 +204,106 @@ const Sidebar = () => {
   const [profileClick, setprofileClick] = useState(false);
   const handleProfileClick = () => setprofileClick(!profileClick);
 
-  const [theme, setTheme] = useState();
-
   return (
-    <Container className="bg-black">
-      <Button clicked={click} onClick={() => handleClick()}>
-        Click
+    <Container
+      className="h-[100%]"
+      style={{ backgroundColor: `${theme ? theme2 : theme1}` }}
+    >
+      <Button className={`${theme?"black":"bg-[#064f60]"}`}  clicked={click} onClick={() => handleClick()} >
+   
       </Button>
-      <SidebarContainer className="bg-blac">
+      <SidebarContainer className="hidde">
         {/* <Logo>
           <img
             src="https://react-sidebar.vercel.app/static/media/home-solid.831db11d.svg"
             alt=""
           />
         </Logo> */}
+        <label class="flex flex-col gap-2 px-3 relative items-center cursor-pointer ">
+          <input
+            onClick={handleTheme}
+            type="checkbox"
+            value=""
+            class="sr-only peer"
+          />
+          <div class="w-11 h-6 bg-gray-800 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[9px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-00"></div>
 
-        <SlickBar clicked={click} className="bg-black text-white">
+          <span
+            class={`ml-3 text-sm font-semi-bold  ${
+              theme ?`text-white`: `text-white`
+            }`}
+          >
+            {theme ? "Light" : "Dark"}
+          </span>
+        </label>
+        {/* side section '''' */}
+        <SlickBar
+          clicked={click}
+          className={`${theme ? `text-white bg-[${theme2}]` : `text-white bg-[${theme1}]`} `}
+         
+        >
           {/* 1 */}
           <Item onClick={() => setClick(false)} activeClassName="active" to="/">
-            <img
+            {/* <img
               src="https://react-sidebar.vercel.app/static/media/home-solid.831db11d.svg"
               alt=""
-            />
+            /> */}
+             <button className="font-bold text-xl " >
+            H
+           </button>
             <Text clicked={click}>Home</Text>
           </Item>
-          {/*  */}
+
           <Item
             onClick={() => setClick(false)}
             activeClassName="active"
-            to="/signup"
+            to="/projects"
           >
-            <img src={signup} alt="" />
+           <button className="font-bold text-xl " >
+            P
+           </button>
+            <Text clicked={click}>Projects</Text>
+          </Item>
+          <Item onClick={() => setClick(false)} activeClassName="active" to="/">
+          <button className="font-bold text-xl " >
+            S
+           </button>
             <Text clicked={click}>Sign Up</Text>
           </Item>
+          <Item onClick={() => setClick(false)} activeClassName="active" to="/">
+          <button className="font-bold text-xl " >
+            D
+           </button>
+
+            <Text clicked={click}>Dash Board</Text>
+          </Item>
+
           <Item
             onClick={() => setClick(false)}
             activeClassName="active"
-            to="/login"
+            to="/about"
           >
-            <img src={login} alt="" />
-
-            <Text clicked={click}>Log In</Text>
-          </Item>
-          <Item onClick={() => setClick(false)} activeClassName="active" to="/">
-            <img src={projects} alt="" />
-            <Text clicked={click}>Project</Text>
-          </Item>
-          <Item onClick={() => setClick(false)} activeClassName="active" to="/">
-            <img src={about} alt="" />
+            <button className="font-bold text-xl " >
+            A
+           </button>
             <Text clicked={click}>About</Text>
           </Item>
         </SlickBar>
 
-        <Profile clicked={profileClick}>
-          <img
-            onClick={() => handleProfileClick()}
-            src={profileImg}
-            alt="Profile"
-          />
-          <Details clicked={profileClick}>
-            <Name>
-              <h4>Sarwar Hossain</h4>
-            </Name>
+        <Link  onClick={() => handleProfileClick()} to="/about">
+          <Profile  className={`${theme ? `text-white bg-[${theme2}]` : `text-white bg-[${theme1}]`} `} clicked={profileClick}>
+            <img src={profileImg} alt="Profile" />
+            <Details clicked={profileClick}>
+              <Name>
+                <h4>Sarwar Hossain</h4>
+              </Name>
 
-            <Logout>
-              <img src={logOut} alt="" />
-            </Logout>
-          </Details>
-        </Profile>
+              <Logout>
+                <img src={logOut} alt="" />
+              </Logout>
+            </Details>
+          </Profile>
+        </Link>
       </SidebarContainer>
     </Container>
   );

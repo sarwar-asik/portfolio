@@ -14,7 +14,9 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
-  const[theme,setTheme] = useState(true)
+// const savedtheme =localStorage.getItem("theme")
+
+  const[theme,setTheme] = useState(false)
 
   const createUser = (email, password) => {
     setLoading(true);

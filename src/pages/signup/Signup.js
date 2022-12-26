@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaBeer } from "@react-icons/all-files/fa/FaBeer";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
   const [show, setShow] = useState(true);
@@ -15,22 +16,22 @@ const Signup = () => {
     const type = form.type.value;
     const email = form.email.value;
 
- fetch(`http://localhost:3007/adduser`,{
-  method:"POST",
-  headers:{
-    "content-type":"application/json"
-  },
-  body:JSON.stringify({name,email,type})
- })
- .then(res =>res.json())
- .then(data=>{
-  console.log(data);
-  toast(`Added ${name}`)
- })
+    fetch(`https://sarwar-hossain-server.vercel.app/adduser`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ name, email, type }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        toast(`Added ${name}`);
+      });
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 my-5 gap-3 items-center bg-black ml-5">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 my-5 gap-3 items-center   max-w-[70%] mx-auto mb-[20%]">
       <div className="">
         <figure>
           <img
@@ -41,9 +42,8 @@ const Signup = () => {
         </figure>
       </div>
       <form onSubmit={handleUser} action="" className="py-5">
-        <h1 className="text-2xl my-5 font-bold text-cyan-600">
-          {" "}
-          Sign Up , Please{" "}
+        <h1 className="text-3xl my-5 font-bold text-center fonts">
+          Sign Up , Please .
         </h1>
         <div class="flex items-center mb-5">
           <label
@@ -90,13 +90,12 @@ const Signup = () => {
             class="border-b-2 border-gray-400 flex-1 py-2 placeholder-gray-300 outline-none focus:border-green-400"
           />
         </div>
-
         <div class="flex items-center mb-10">
           <label
             for="password"
             class="w-20 inline-block text-right mr-4 text-gray-500 "
           >
-            password
+            Password
           </label>
           <input
             type="text"
@@ -106,11 +105,19 @@ const Signup = () => {
             class="border-b-2 border-gray-400 flex-1 py-2 placeholder-gray-300 outline-none focus:border-green-400"
           />
         </div>
+        <p className="text-center fonts">
+          {" "}
+          Did you sign Up ?{" "}
+          <Link to="/login">
+            {" "}
+            <span className="normal"> Login Please ....</span>
+          </Link>
+        </p>
         <div class="text-right">
           <input
             type="submit"
             value="Sign Up"
-            class="py-3 px-8 bg-cyan-600 text-green-100 font-bold rounded"
+            class="py-3 px-8 buttons  font-bold rounded"
           />
         </div>
       </form>

@@ -1,9 +1,14 @@
 import React from "react";
+import { useContext } from "react";
+import { AuthContext } from "../../firebase/AuthProvider";
 
 const Footer = () => {
+    
+const {theme} = useContext(AuthContext)
+
   return (
     
-<footer class="p-4  sm:p-6 " >
+<footer class="p-4  sm:p-6 " style={{"backgroundColor":`${theme?'#181D31':''}`}}>
     <div class="md:flex md:justify-between">
         
         <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">

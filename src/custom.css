@@ -1,25 +1,110 @@
-.back{
-    background-color: #8D72E1;
+.back {
+  background-color: #8d72e1;
 }
-.fonts{
-    color:#7978FF
+.fonts {
+  color: #2193b0;
 }
-.fonts:hover{
-    color:#300aa2
+.normal {
+  color: #2193b0;
 }
-
-.buttons{
-    background-color:#8565e6 ;
-    padding: 15px 10px ;
-    border-radius: 20px;
-    color: white;
-   font-weight: 400;
-    
-
+.fonts:hover {
+  color: #025054;
+}
+.normal:hover {
+  color: #0cc6d0;
 }
 
-.buttons:hover{
-    background-color:#5a2fda ;
-    
-    
+.links:visited {
+  background-color: darkslategray;
+}
+
+.buttonsaaaaa {
+  background-color: #00cdac;
+  padding: 15px 15px;
+  /* border-radius: 20px; */
+  color: white;
+  font-weight: 400;
+}
+
+.buttons:hover {
+  background-color: #625858;
+}
+
+/* gradient animation */
+.buttons {
+	background: linear-gradient(to right,#2193b0 ,#6dd5ed);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+  color:rgb(245, 245, 245);
+  font-weight: 400;
+	/* height: 100vh; */
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+.projectimg {
+  height: 350px;
+  /* transform: skewY(20deg); */
+  transform: rotate(15deg);
+  transition: transform 600ms ease-in;
+}
+.projectimg:hover {
+  transform: rotate(0deg);
+}
+
+.texts-transition {
+  transition: font-size 200ms ease-in-out;
+}
+.texts-transition:hover {
+  /* transform: ; */
+  font-size: larger;
+}
+
+.icons {
+  transition: height 500ms, width 500ms;
+  min-height: 60px;
+  transition: height 400ms ease, width 400ms;
+}
+.icons:hover {
+  height: 60px;
+  width: 60px;
+}
+
+.headings {
+  margin-top: 25px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #0d7f89;
+}
+
+@media screen and (min-width: 1024px) {
+  .shotimg1 {
+    transform: rotateZ(-20deg);
+    transition: transform 770ms ease;
+  }
+  .shotimg3 {
+    transform: rotateZ(20deg);
+    transition: transform 700ms ease-in;
+  }
+  .shotimg2 {
+    transform: rotateZ(0deg);
+  }
+
+  .shotimg1:hover {
+    transform: rotateZ(0deg);
+  }
+  .shotimg3:hover {
+    transform: rotateZ(0deg);
+  }
 }
