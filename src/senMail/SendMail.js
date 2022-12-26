@@ -55,7 +55,8 @@ const SendMail = () => {
               </div>
               <div>
                 <input
-                  className="buttons px-3  py-5"
+                  className="px-3  py-5"
+                  id="buttons"
                   type="submit"
                   value="Send "
                 />

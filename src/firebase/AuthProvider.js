@@ -7,6 +7,7 @@ import {
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
+import { toast } from "react-toastify";
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
@@ -45,7 +46,7 @@ const AuthProvider = ({ children }) => {
     const isLogout = window.confirm("Log Out ?");
     if (isLogout) {
       return signOut(auth)
-        .then(() => {})
+        .then(() => {toast('Logout')})
         .catch((e) => console.log(e));
     }
   };

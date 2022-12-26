@@ -17,11 +17,12 @@ import MyProjects from "./myProjects/MyProjects";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import AddProjectDetail from "./pages/admin/AddProjectDetail";
 import About from "./components/about/About";
+import UnAuthorizied from "./pages/admin/unAuthorize/UnAuthorizied";
+import SidebarSM from "./sidebar/SlibarSM";
 
 const queryClient = new QueryClient();
 function App() {
-  const { theme} = useContext(AuthContext);
-
+  const { theme } = useContext(AuthContext);
 
   return (
     <div
@@ -30,18 +31,15 @@ function App() {
     >
       <QueryClientProvider client={queryClient}>
         <div className="w-[5%] ">
-          <Sidebar />
+          <SidebarSM />
         </div>
         <div className="w-[95%] mx-auto">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/notAdmin" element={<UnAuthorizied />} />
             <Route path="/signup" element={<Signup />} />
-            <Route
-              path="/project/:name"
-              element={<ExploreProject />}
-             
-            />
+            <Route path="/project/:name" element={<ExploreProject />} />
             <Route path="/addDetails" element={<AddProjectDetail />} />
             <Route path="/projects" element={<MyProjects />} />
             <Route path="/about" element={<About />} />

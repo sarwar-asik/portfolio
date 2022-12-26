@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import { FaBeer } from "@react-icons/all-files/fa/FaBeer";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../firebase/AuthProvider";
 
 const Signup = () => {
+  const {creteUser} = useContext(AuthContext)
+
   const [show, setShow] = useState(true);
 
   const handleShow = () => {
@@ -16,6 +20,7 @@ const Signup = () => {
     const type = form.type.value;
     const email = form.email.value;
 
+    
     fetch(`https://sarwar-hossain-server.vercel.app/adduser`, {
       method: "POST",
       headers: {

@@ -270,7 +270,7 @@ const SidebarSM = () => {
             <Text clicked={click}>Sign Up</Text>
           </Item>
           <Item
-           onClick={() => setClick(false)}
+            onClick={() => setClick(false)}
             activeClassName="active"
             to={
               user?.email === "sarwarasik@gmail.com"
