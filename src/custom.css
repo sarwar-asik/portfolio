@@ -96,6 +96,24 @@
   color: #0d7f89;
 }
 
+.headings1{
+  font-family: 'Sulphur Point';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 38px;
+  color: #0d7f89;
+  }
+  .para1{
+      font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+  /* or 160% */
+  color: #333333;
+  }
+
 @media screen and (min-width: 1024px) {
   .shotimg1 {
     transform: rotateZ(-20deg);

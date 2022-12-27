@@ -7,6 +7,7 @@ import MyProjects from "../myProjects/MyProjects";
 import { AuthContext } from "../firebase/AuthProvider";
 import SendMail from "../senMail/SendMail";
 import ProfileBanner from "../profileBanner/ProfileBanner";
+import Features from "../pages/features/Features";
 
 const Home = () => {
   const { theme } = useContext(AuthContext);
@@ -16,6 +17,8 @@ const Home = () => {
       <ProfileBanner/>
       <Services />
       <MyProjects/>
+      <Features/>
+      
       <SendMail/>
     </div>
   );
