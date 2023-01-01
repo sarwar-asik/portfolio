@@ -29,7 +29,7 @@ const Features = () => {
     },
   ];
   return (
-    <div className="my-5 px-[15px]">
+    <div className="my-8 px-[15px]">
       <header className="text-center">
         <h6 className="fonts"> Features</h6>
         <h4 className="headings1">Awesome </h4>

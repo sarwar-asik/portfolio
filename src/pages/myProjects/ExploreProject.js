@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Fade from "react-reveal/Fade";
 import Flip from 'react-reveal/Flip';
 import { useLoaderData, useLocation } from "react-router-dom";
-import "../custom.css";
+import "../../custom.css";
 import { FaArrowRight, FaGithub } from "react-icons/fa";
 var ReactDOM = require("react-dom");
 var Carousel = require("react-responsive-carousel").Carousel;

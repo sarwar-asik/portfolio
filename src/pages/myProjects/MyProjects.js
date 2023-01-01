@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { FaArrowRight, FaGithub } from "react-icons/fa";
 import { Zoom } from "react-reveal";
 import { Link, useNavigate } from "react-router-dom";
-import "../custom.css";
+import "../../custom.css";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 
@@ -36,7 +36,7 @@ const MyProjects = () => {
   };
 
   return (
-    <div className=" my-5" style={{ overflow: "hidden" }}>
+    <div className=" my-10" style={{ overflow: "hidden" }}>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {allprojects?.map((project) => {
           return (

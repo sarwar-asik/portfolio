@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useEffect, useReducer, useState } from "react";
 import app from "./firebase.config";
 import {
   createUserWithEmailAndPassword,
@@ -50,6 +50,18 @@ const AuthProvider = ({ children }) => {
         .catch((e) => console.log(e));
     }
   };
+
+
+
+const initialState = {}
+
+const reducer1st = (state,action)=>{
+return
+}
+const [state,dispatch] = useReducer(reducer1st,initialState)
+
+
+
 
   const authInfo = {name: ' zinku ' , user, createUser, login, logout,theme,setTheme };
 

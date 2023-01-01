@@ -1,5 +1,6 @@
 import React from "react";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../firebase/AuthProvider";
 
@@ -86,26 +87,9 @@ const Footer = () => {
       </div>
       <div>
         <span className="footer-title">Contact Me</span>
-        <div className="form-control w-80">
-          <label className="label">
-            <span className="label-text text-primary">
-              Enter your email address
-            </span>
-          </label>
-          <form onSubmit={handlemessage} className="relative">
-            <input
-              type="text"
-              name="email"
-              placeholder="username@site.com"
-              className="input input-bordered w-full pr-16"
-            />
-            <input
-              className="btn btn-primary absolute top-0 right-0 rounded-l-none"
-              type="submit"
-              value={"Send ME"}
-            />
-          </form>
-        </div>
+  <Link to='/contact'>
+      <button className="h-[30px] w-[80px]
+      bg-slate-400  px-2 py-1 hover:to-blue-500">Contact</button></Link>
       </div>
     </footer>
   );

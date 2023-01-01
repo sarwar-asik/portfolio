@@ -1,6 +1,6 @@
 import React from "react";
 import { useTypewriter } from "react-simple-typewriter";
-import profile from "../assets/professional-removebg-preview.png";
+import profile from "../../assets/professional-removebg-preview.png";
 import Fade from "react-reveal/Fade";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 

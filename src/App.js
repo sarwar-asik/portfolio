@@ -1,29 +1,26 @@
 import "./App.css";
-import { toast, ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "flowbite";
 import { Route, Routes } from "react-router-dom";
-import Sidebar from "./sidebar/Sidebar";
 import Home from "./home/Home";
-import Footer from "./pages/footer/Footer";
+import Footer from "./SharedComponents/footer/Footer";
 import Signup from "./pages/signup/Signup";
-import Login from "./pages/login/Login";
-import { useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "./firebase/AuthProvider";
-import ExploreProject from "./myProjects/ExploreProject";
-import AddProject from "./pages/admin/AddProject";
-import MyProjects from "./myProjects/MyProjects";
+import ExploreProject from "./pages/myProjects/ExploreProject";
+import MyProjects from "./pages/myProjects/MyProjects";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import AddProjectDetail from "./pages/admin/AddProjectDetail";
-import About from "./components/about/About";
+import About from "./pages/about/About";
 import UnAuthorizied from "./pages/admin/unAuthorize/UnAuthorizied";
-import SidebarSM from "./sidebar/SlibarSM";
+import SidebarSM from "./SharedComponents/sidebar/SlibarSM";
+import Contactme from "./pages/senMail/ContactMe";
+import Login from "./pages/login/Login";
 
 const queryClient = new QueryClient();
 function App() {
   const { theme } = useContext(AuthContext);
-
   return (
     <div
       className="flex justify-between  mainfont"
@@ -43,6 +40,7 @@ function App() {
             <Route path="/addDetails" element={<AddProjectDetail />} />
             <Route path="/projects" element={<MyProjects />} />
             <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contactme />} />
           </Routes>
           <Footer />
         </div>

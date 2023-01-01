@@ -1,10 +1,9 @@
 import React, { useContext, useState } from "react";
 import styled from "styled-components";
-import { Link, NavLink, useNavigate, useNavigation } from "react-router-dom";
-import profileImg from "../assets/small-size.png";
-import logOut from "../assets/logout.png";
-import { AuthContext } from "../firebase/AuthProvider";
-import "../custom.css";
+import { Link, NavLink, useNavigate} from "react-router-dom";
+import profileImg from '../../assets/small-size.png'
+import { AuthContext } from "../../firebase/AuthProvider";
+import "../../custom.css";
 
 const Container = styled.div`
   position: fixed;
