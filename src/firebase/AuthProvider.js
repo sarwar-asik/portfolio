@@ -8,6 +8,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { toast } from "react-toastify";
+import { initialState, projectsReducer} from "../SharedComponents/states/redux/ReducerMessage";
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
@@ -51,16 +52,7 @@ const AuthProvider = ({ children }) => {
     }
   };
 
-
-
-const initialState = {}
-
-const reducer1st = (state,action)=>{
-return
-}
-const [state,dispatch] = useReducer(reducer1st,initialState)
-
-
+  const [state,dispatch] = useReducer(projectsReducer,initialState)
 
 
   const authInfo = {name: ' zinku ' , user, createUser, login, logout,theme,setTheme };

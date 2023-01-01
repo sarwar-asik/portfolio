@@ -23,15 +23,11 @@ const ProfileBanner = () => {
         <div className="hero-content  flex-col lg:flex-row-reverse lg:justify-between  gap-[20px]">
           <Fade left>
             <figure className="mx-auto">
-              <PhotoProvider>
-                <PhotoView src={profile}>
-                  <img
-                    src={profile}
-                    className="mx-w-[80%] rounded-[50%] fonts "
-                    alt="sarwar-hossain"
-                  />
-                </PhotoView>
-              </PhotoProvider>
+              <img
+                src={profile}
+                className="mx-w-[80%] rounded-[50%] fonts "
+                alt="sarwar-hossain"
+              />
             </figure>
           </Fade>
           <Fade right>

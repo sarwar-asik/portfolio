@@ -7,9 +7,16 @@ import { Link, useNavigate } from "react-router-dom";
 import "../../custom.css";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
+import { useReducer } from "react";
+import {
+  initialState,
+  projectsReducer,
+} from "../../SharedComponents/states/redux/ReducerMessage";
 
 const MyProjects = () => {
   const navigate = useNavigate();
+  // redux ////
+  const [state, dispatch] = useReducer(projectsReducer, initialState);
 
   const { data: allprojects = [], refetch } = useQuery({
     queryKey: ["projects"],
@@ -19,7 +26,6 @@ const MyProjects = () => {
         .then((data) => data),
   });
 
-  const [projects, setProjects] = useState({});
   const [finds, setfinds] = useState("");
 
   useEffect(() => {
@@ -70,6 +76,7 @@ const MyProjects = () => {
                       href={project.live}
                       className="flex items-center gap-2 text-blue-400  texts-transition font-bold h-[55px]"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       <p className="">Live Site </p>
                       <FaArrowRight />
@@ -79,6 +86,7 @@ const MyProjects = () => {
                       className="flex items-center gap-3 text-slate-400 font-bold hover:text-slate-600  texts-transition h-[55px]"
                       href={project?.source}
                       target="_blank"
+                      rel="noreferrer"
                     >
                       <p className="">Source Code </p>
                       <FaGithub />
