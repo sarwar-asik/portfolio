@@ -4,6 +4,7 @@ import { Link, NavLink, useNavigate, useNavigation } from "react-router-dom";
 import profileImg from "../assets/small-size.png";
 import logOut from "../assets/logout.png";
 import { AuthContext } from "../firebase/AuthProvider";
+import "../custom.css";
 
 const Container = styled.div`
   position: fixed;
@@ -55,10 +56,10 @@ const SidebarContainer = styled.div`
   margin-top: 1rem;
   border-radius: 0 30px 30px 0;
   padding: 1rem 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // justify-content: space-between;
   position: relative;
 `;
 
@@ -208,15 +209,22 @@ const SidebarSM = () => {
 
   return (
     <Container
-      className="h-[100%]"
+      className={`sm:h-auto lg:h-full`}
       style={{ backgroundColor: `${theme ? theme2 : theme1}` }}
     >
       <Button
-        className={`${theme ? "black" : "bg-[#064f60]"}`}
+        className={`${theme ? "blac" : "bg-[#064f60"}`}
         clicked={click}
         onClick={() => handleClick()}
       ></Button>
-      <SidebarContainer className="hidde">
+
+      <SidebarContainer
+        className={`${
+          click
+            ? "slideContainer"
+            : "hidden lg:flex flex-col items-center justify-between"
+        } `}
+      >
         {/* <Logo>
           <img
             src="https://react-sidebar.vercel.app/static/media/home-solid.831db11d.svg"
@@ -245,7 +253,7 @@ const SidebarSM = () => {
           clicked={click}
           className={`${
             theme ? `text-white bg-[${theme2}]` : `text-white bg-[${theme1}]`
-          } `}
+          } hidden `}
         >
           {/* 1 */}
           <Item onClick={() => setClick(false)} activeClassName="active" to="/">

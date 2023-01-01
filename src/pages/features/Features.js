@@ -34,10 +34,10 @@ const Features = () => {
         <h6 className="fonts"> Features</h6>
         <h4 className="headings1">Awesome </h4>
         <h4 className="headings1">Client Services </h4>
-        <p className="para1">
+        <p className="para1 normal">
          I try to best service to Client or buyer That's why they satisfied .
         </p>
-        <p className="para1"> My every projects is impleament by my Skills</p>
+        <p className="para1 normal"> My every projects is impleament by my Skills</p>
       </header>
       <main className="my-4 grid grid-cols-1 gap-[15px] md:grid-cols-2 lg:grid-cols-3 mt-4 mb-5">
         {features.map((feature) => {
@@ -52,7 +52,7 @@ const Features = () => {
                 <img class="h-[30px] w-[30px]" src={img} alt="Title" />
               </figures>
               <h1 className="font-semibold">{name}</h1>
-              <p className="para1">
+              <p className="para1 normal">
                 {detail} <br /> Regularly I work with {name} <br />
                
               </p>

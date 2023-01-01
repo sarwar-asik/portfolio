@@ -13,13 +13,13 @@ const Home = () => {
   const { theme } = useContext(AuthContext);
 
   return (
-    <div className='ml-7' >
+    <div className="ml-7">
       <ProfileBanner/>
-      <Services />
+      <Services/>
       <MyProjects/>
-      <Features/>
-      
-      <SendMail/>
+      <Features />
+
+      <SendMail />
     </div>
   );
 };

@@ -14,7 +14,7 @@ const Footer = () => {
 
   return (
     <footer
-      className="footer p-10  text-white"
+      className="footer p-10  text-white px-[70px]"
       style={{ backgroundColor: `${theme ? "#181D31" : "#064757"}` }}
     >
       <div>
