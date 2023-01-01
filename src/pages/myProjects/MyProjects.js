@@ -47,21 +47,13 @@ const MyProjects = () => {
         {allprojects?.map((project) => {
           return (
             <Zoom>
-              <div className="card w-[80%]  mx-auto glass">
+              <div className="card w-[95%]  mx-auto glass">
                 <figure>
+                
                   <PhotoProvider>
                     <PhotoView src={project?.img}>
                       <img
-                        className="projectimg max-w-[80%]"
-                        src={project?.img}
-                        alt="project"
-                      />
-                    </PhotoView>
-                  </PhotoProvider>
-                  <PhotoProvider>
-                    <PhotoView src={project?.img}>
-                      <img
-                        className="projectimg max-h-[400px]"
+                        className="projectimg w-[100%] max-h-[400px]"
                         src={project?.img}
                         alt="project"
                       />
