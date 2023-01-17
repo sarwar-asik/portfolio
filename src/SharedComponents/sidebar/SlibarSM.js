@@ -259,7 +259,7 @@ const SidebarSM = () => {
             {/* <img
               src="https://react-sidebar.vercel.app/static/media/home-solid.831db11d.svg"
               alt=""
-            /> */}
+            /> */ }
             <button className="font-bold text-xl ">H</button>
             <Text clicked={click}>Home</Text>
           </Item>
