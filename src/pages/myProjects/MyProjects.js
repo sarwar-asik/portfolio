@@ -42,69 +42,56 @@ const MyProjects = () => {
   };
 
   return (
-    <div className=" my-10" style={{ overflow: "hidden" }}>
+    <div className=" my-10 w-[95%] mx-auto" style={{ overflow: "hidden" }}>
+      <h1 className=" text-5xl my-5 font-bold font-serif "> My Projects ,</h1>
+      <p className="font-normal lg:text-xl mt-2 sm:text-lg text-slate-500 mb-8">
+        {" "}
+        There are some my projects those I created recently. <br />
+        You can explore my projects click by live{" "}
+      </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {allprojects?.map((project) => {
+          console.log(project);
           return (
-            <Zoom>
-              <div className="card w-[95%]  mx-auto glass">
-                <figure>
-                  <PhotoProvider>
-                    <PhotoView src={project?.img}>
-                      <img
-                        className="projectimg w-[100%] max-h-[400px]"
-                        src={project?.img}
-                        alt="project"
-                      />
-                    </PhotoView>
-                  </PhotoProvider>
-                </figure>
-
-                <div className="mt-3 shadow-2xl px-2 py-5 pb-5 border-4">
-                  <h2 className="text-3xl fonts">{project?.name}</h2>
-                  <div className=" flex justify-between my-5">
-                    <a
-                      href={project.live}
-                      className="flex items-center gap-2 text-blue-400  texts-transition font-bold h-[55px]"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <p className="">Live Site </p>
-                      <FaArrowRight />
-                    </a>
-
-                    <a
-                      className="flex items-center gap-3 text-slate-400 font-bold hover:text-slate-600  texts-transition h-[55px]"
-                      href={project?.source}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <p className="">Source Code </p>
-                      <FaGithub />
-                    </a>
-                  </div>
-
-                  <p className="text-2xl font-bold fonts">Used Technology :</p>
-                  <div className="flex gap-4 my-3">
-                    {project?.tech?.map((img) => (
-                      <img
-                        className="w-[40px] icons h-[40px]"
-                        src={img}
-                        alt="tech img"
-                      />
-                    ))}
-                  </div>
-                  <div
-                    onClick={() => handleClick(project)}
-                    className="card-actions justify-end"
-                  >
-                    <button className="buttons px-2 py-3 rounded-[10px]">
-                      Explore
-                    </button>
-                  </div>
-                </div>
+            <div className="shadow-2xl p-2 ">
+              <figure className="">
+                <img
+                  src={project?.img}
+                  className="h-[32rem]  lg:w-[90%] sm:w-full mx-auto rounded-lg"
+                  alt=""
+                />
+              </figure>
+              <h1 className="text-3xl font-bold  text-center mt-2 text-slate-600 font-serif">
+                {" "}
+                {project?.name}
+              </h1>
+              <div className="mt-3 grid grid-cols-1 lg:grid-cols-2 gap-5 mb-5">
+                <a
+                  className="text-xl font-semibold font-mono bg-[#a2d9ff]  py-1 px-3 rounded-lg text-slate-700  hover:bg-slate-300 shadow-xl"
+                  href={project?.live}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {" "}
+                  Live site{" "}
+                </a>
+                <a
+                  className="text-xl font-semibold font-mono bg-[#a2d9ff] py-1 px-3 rounded-lg text-slate-700 hover:bg-slate-300 shadow-xl"
+                  href={project?.source}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {" "}
+                  Github{" "}
+                </a>
               </div>
-            </Zoom>
+              <button
+                onClick={() => handleClick(project)}
+                className="w-full my-5 py-3 bg-slate-300 font-bold text-2xl  hover:bg-[#a2d9ff]"
+              >
+                Details
+              </button>
+            </div>
           );
         })}
       </div>

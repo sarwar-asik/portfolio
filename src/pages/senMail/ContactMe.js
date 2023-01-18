@@ -30,7 +30,7 @@ const Contactme = () => {
           ...state,
           [action.payload.name]: action.payload.value,
         };
-      return state;
+        return state;
       case "INCREMENT":
         return {
           ...state,
@@ -50,7 +50,7 @@ const Contactme = () => {
   const storeRevierw = (event) => {
     event.preventDefault();
     console.log("state from storeReview ", state);
-    
+
     // const form = event.target;
     // toast(`Thank ${form.email.value}`);
     // form.reset();
@@ -60,7 +60,7 @@ const Contactme = () => {
     <div>
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 my-5">
         <aside className=" p-3 shadow-lg">
-          <h1 className="headings1"> Message Me </h1>
+          <h1 className="text-4xl font-bold"> Message Me </h1>
           <form onSubmit={storeRevierw}>
             {/* 
             method="post"
@@ -81,12 +81,12 @@ const Contactme = () => {
             />
 
             <input
-             onBlur={(e) =>
-              dispatch({
-                type: "INPUT",
-                payload: { name: e.target.name, value: e.target.value },
-              })
-            }
+              onBlur={(e) =>
+                dispatch({
+                  type: "INPUT",
+                  payload: { name: e.target.name, value: e.target.value },
+                })
+              }
               className="input input-bordered input-info my-3 w-full"
               name="email"
               type="email"
@@ -94,12 +94,12 @@ const Contactme = () => {
               required
             />
             <textarea
-             onBlur={(e) =>
-              dispatch({
-                type: "INPUT",
-                payload: { name: e.target.name, value: e.target.value },
-              })
-            }
+              onBlur={(e) =>
+                dispatch({
+                  type: "INPUT",
+                  payload: { name: e.target.name, value: e.target.value },
+                })
+              }
               className="w-full textarea textarea-info "
               name="message"
               placeholder="Write Your Message ...."
@@ -108,14 +108,14 @@ const Contactme = () => {
               rows={5}
             ></textarea>
             <input
-              className="h-[50px] text-white w-[80px] bg-blue-600 p-2"
+              className="bg-[#8fcdf9] py-5 px-2 my-5 rounded-lg font-bold text-slate-7 hover:bg-slate-600 hover:text-[#a2d9ff]"
               type="submit"
               value="Send "
             />
           </form>
         </aside>
 
-        <aside className={`py-[200px]  px-3 rounded-lg bg-[${theme1}]`}>
+        <aside className={`py-[200px]  px-3 rounded-lg bg-slate-500`}>
           <header className="flex justify-between items-center text-6xl text-white font-serif">
             <h1>
               {" "}
@@ -130,11 +130,13 @@ const Contactme = () => {
             </figure>
           </header>
           <div className="mt-5">
-            <h3 className="text-xl text-white"> Phone </h3>
-            <p className="text-3xl font-thin text-slate-500">+880160219933</p>
+            <h3 className="text-xl text-white font-bold"> Phone </h3>
+            <p className="lg:text-3xl font-normal text-slate-200">
+              +880160219933
+            </p>
             <p className="mt-3">
               <h3 className="text-xl text-white"> Gmail </h3>
-              <p className="text-2xl font-bold text-slate-500">
+              <p className="lg:text-3xl font-normal text-slate-200">
                 sarwarasik@gmail.com
               </p>
             </p>
@@ -158,7 +160,7 @@ const Contactme = () => {
 
               <a
                 href="https://github.com/sarwar-asik"
-                className="text-slate-500 shadow-lg p-2"
+                className="text-slate-100 shadow-lg p-2"
                 target={"_blank"}
                 rel="noreferrer"
               >

@@ -10,10 +10,10 @@ const ProfileBanner = () => {
     words: [
       "Web Developer",
       "Frontend Developer",
-      "MERN Stack",
+      "MERN Stack Developer",
       "React Developer",
     ],
-    loop: 100,
+    loop: 200,
     delaySpeed: 2000,
     onLoopDone: () => console.log(`loop completed after 3 runs.`),
   });

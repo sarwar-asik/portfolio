@@ -21,7 +21,12 @@ $color2:white;
   background-repeat: no-repeat;
   background-size:700%;
   background-position:0% ;
-  
+}
+.shadow1{
+  border-radius: 21px;
+// background: #e0e0e0;
+box-shadow:  -5px 5px 100px #c0bcbc,
+             5px -5px 100px #ffffff;
 }
 // .back {
 //   background-color: #8d72e1;

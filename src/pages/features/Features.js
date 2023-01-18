@@ -11,7 +11,7 @@ const Features = () => {
       name: "Web Designing",
       img: feature1,
       detail: "I Design Web site with CSS and CSS Framework  ",
-      color: "aqua",
+      color: "#a2d9ff",
     },
     {
       no: 2,
@@ -31,34 +31,33 @@ const Features = () => {
   return (
     <div className="my-8 px-[15px]">
       <header className="text-center">
-        <h6 className="fonts"> Features</h6>
-        <h4 className="headings1">Awesome </h4>
-        <h4 className="headings1">Client Services </h4>
-        <p className="para1 normal">
-          I try to best service to Client or buyer That's why they satisfied .
-        </p>
-        <p className="para1 normal">
-          {" "}
+        <h6 className="text-4xl font-bold font-serif "> My Services</h6>
+        <h4 className="text-xl font-semibold font-mono">
+          Best Client or Company Support
+        </h4>
+
+        <p className="font-normal lg:text-xl mt-2 sm:text-lg text-slate-500 mb-8">
+          I try to best service to Client or buyer for them satisfied . <br />
           My every projects is impleament by my Skills
         </p>
       </header>
-      <main className="my-4 grid grid-cols-1 gap-[15px] md:grid-cols-2 lg:grid-cols-3 mt-4 mb-5">
+      <main className="my-4 grid grid-cols-1 gap-[25px] md:grid-cols-2 lg:grid-cols-3 mt-4 mb-5">
         {features.map((feature) => {
           const { name, img, detail, color } = feature;
 
           return (
-            <div class="card text-start  p-2 h-[230px]">
+            <div class="card text-start   shadow-2xl px-4 py-5 relative">
               <figures
-                className={` h-[50px] w-[50px]  text-center p-2 rounded-[50%] `}
+                className={` h-[100px] w-[100px] text-center p-6 rounded-[10%] my-2`}
                 style={{ backgroundColor: `${color}` }}
               >
-                <img class="h-[30px] w-[30px]" src={img} alt="Title" />
+                <img class="h-[70px] w-[70px]" src={img} alt="Title" />
               </figures>
-              <h1 className="font-semibold">{name}</h1>
-              <p className="para1 normal">
+              <h1 className="font-semibold mt-5 font-serif lg:text-4xl sm:text-2xl">{name}</h1>
+              <p className="font-normal lg:text-xl mt-2 sm:text-sm text-slate-500 mb-2 ">
                 {detail} <br /> Regularly I work with {name} <br />
               </p>
-              <h6 className="text-slate-600"> See more ...</h6>
+              <h6 className="text-slate-700"> See more ...</h6>
             </div>
           );
         })}

@@ -15,8 +15,8 @@ const Footer = () => {
 
   return (
     <footer
-      className="footer p-10  text-white px-[70px]"
-      style={{ backgroundColor: `${theme ? "#181D31" : "#064757"}` }}
+      className="footer p-10 bg-slate-700  text-white px-[70px]"
+      
     >
       <div>
         <span className="footer-title">Services</span>
@@ -88,8 +88,7 @@ const Footer = () => {
       <div>
         <span className="footer-title">Contact Me</span>
   <Link to='/contact'>
-      <button className="h-[30px] w-[80px]
-      bg-slate-400  px-2 py-1 hover:to-blue-500">Contact</button></Link>
+      <button className="bg-[#8fcdf9] py-5 px-2 my-5 rounded-lg font-bold text-slate-7 hover:bg-slate-600 hover:text-[#a2d9ff]">Contact </button></Link>
       </div>
     </footer>
   );
