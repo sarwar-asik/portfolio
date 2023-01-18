@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react";
 import styled from "styled-components";
-import { Link, NavLink, useNavigate} from "react-router-dom";
-import profileImg from '../../assets/small-size.png'
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import profileImg from "../../assets/small-size.png";
 import { AuthContext } from "../../firebase/AuthProvider";
-import "../../custom.css";
+import "../../custom.scss";
 
 const Container = styled.div`
   position: fixed;
@@ -186,8 +186,7 @@ const Logout = styled.button`
   }
 `;
 
-const theme1 = "#064f60";
-const theme2 = "black";
+
 
 const SidebarSM = () => {
   const navigate = useNavigate();
@@ -208,11 +207,10 @@ const SidebarSM = () => {
 
   return (
     <Container
-      className={`sm:h-auto lg:h-full`}
-      style={{ backgroundColor: `${theme ? theme2 : theme1}` }}
+      className={`${click ? "h-full":""} lg:h-full ${theme ? "bg2" : "bg-[#a2d9ff]"}`}
     >
       <Button
-        className={`${theme ? "blac" : "bg-[#064f60"}`}
+        className={`${theme ? "bg-slate-500" : "bg-slate-700"} `}
         clicked={click}
         onClick={() => handleClick()}
       ></Button>
@@ -230,7 +228,7 @@ const SidebarSM = () => {
             alt=""
           />
         </Logo> */}
-        <label class="flex flex-col gap-2 px-3 relative items-center cursor-pointer ">
+        <label class="flex flex-col gap-2 px-3 relative items-center cursor-pointer">
           <input
             onClick={handleTheme}
             type="checkbox"
@@ -251,15 +249,15 @@ const SidebarSM = () => {
         <SlickBar
           clicked={click}
           className={`${
-            theme ? `text-white bg-[${theme2}]` : `text-white bg-[${theme1}]`
-          } hidden `}
+            theme ? `bg2 ` : `bg bg-[#a2d9ff] `
+          } hidden font-bold`}
         >
           {/* 1 */}
           <Item onClick={() => setClick(false)} activeClassName="active" to="/">
             {/* <img
               src="https://react-sidebar.vercel.app/static/media/home-solid.831db11d.svg"
               alt=""
-            /> */ }
+            /> */}
             <button className="font-bold text-xl ">H</button>
             <Text clicked={click}>Home</Text>
           </Item>
@@ -303,7 +301,7 @@ const SidebarSM = () => {
         <Link onClick={() => handleProfileClick()} to="/about">
           <Profile
             className={`${
-              theme ? `text-white bg-[${theme2}]` : `text-white bg-[${theme1}]`
+              theme ? "bg-slate-500" : "bg-slate-700"
             } `}
             clicked={profileClick}
           >

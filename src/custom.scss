@@ -1,18 +1,43 @@
-.back {
-  background-color: #8d72e1;
+$background-color:#2193b0;
+$color1:rgb(26, 25, 25);
+$color2:white;
+
+.color1{
+  color:$color1;
 }
-.fonts {
-  color: #2193b0;
+.color2{
+  color:$color2;
 }
-.normal {
-  color: #2193b0;
+.bg1{
+  background-color: $color2;
+  color: $color1;
 }
-.fonts:hover {
-  color: #025054;
+.bg2{
+  background-color:$color1;
+  color: $color2;
 }
-.normal:hover {
-  color: #0cc6d0;
+.profile{
+  background: url("./assets/wave\ \(1\).svg");
+  background-repeat: no-repeat;
+  background-size:700%;
+  background-position:0% ;
+  
 }
+// .back {
+//   background-color: #8d72e1;
+// }
+// .fonts {
+//   color: $background-color;
+// }
+// .normal {
+//   color: $background-color;
+// }
+// .fonts:hover {
+//   color: #025054;
+// }
+// .normal:hover {
+//   color: #0cc6d0;
+// }
 
 .links:visited {
   background-color: darkslategray;

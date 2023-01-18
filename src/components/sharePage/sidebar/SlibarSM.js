@@ -4,7 +4,7 @@ import { Link, NavLink, useNavigate, useNavigation } from "react-router-dom";
 import profileImg from "";
 import logOut from "../assets/logout.png";
 import { AuthContext } from "../../../firebase/AuthProvider";
-import "../custom.css";
+import "../custom.scss";
 
 const Container = styled.div`
   position: fixed;

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useTypewriter } from "react-simple-typewriter";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../firebase/AuthProvider";
-import "../../custom.css";
+import "../../custom.scss";
 
 const Login = () => {
   const navigate = useNavigate();

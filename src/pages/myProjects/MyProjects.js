@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { FaArrowRight, FaGithub } from "react-icons/fa";
 import { Zoom } from "react-reveal";
 import { Link, useNavigate } from "react-router-dom";
-import "../../custom.css";
+import "../../custom.scss";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 import { useReducer } from "react";
@@ -49,7 +49,6 @@ const MyProjects = () => {
             <Zoom>
               <div className="card w-[95%]  mx-auto glass">
                 <figure>
-                
                   <PhotoProvider>
                     <PhotoView src={project?.img}>
                       <img

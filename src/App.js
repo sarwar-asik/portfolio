@@ -23,7 +23,7 @@ function App() {
   const { theme } = useContext(AuthContext);
   return (
     <div
-      className="flex justify-between  mainfont"
+      className={`flex justify-between ${theme ? "color2" : "color1"}`}
       style={{ backgroundColor: `${theme ? "#181D31" : ""}` }}
     >
       <QueryClientProvider client={queryClient}>
